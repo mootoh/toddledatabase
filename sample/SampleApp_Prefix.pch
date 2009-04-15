@@ -1,0 +1,14 @@
+/*
+ *  SampleApp_Prefix.h
+ *  ToddleDatabase
+ *
+ *  Created by mootoh on 4/15/09.
+ *  Copyright 2009 deadbeaf.org. All rights reserved.
+ *
+ */
+
+
+#ifdef __OBJC__
+   #import <Foundation/Foundation.h>
+   #import <UIKit/UIKit.h>
+#endif
