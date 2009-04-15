@@ -1,0 +1,26 @@
+ToddleDatabase
+================================
+
+A SQLite3 wrapper library for iPhone development.
+It makes small abstraction for using SQLite3 a bit easier.
+
+
+Usage
+----------------
+
+* include 'ToddleDatabase.h' and 'libToddoleDatabase.a' in your project
+* create db instance via 'ToddleDatabase:initWithPath:'
+* query it
+
+
+ex. SELECT:
+----------------
+
+* specify the field by NSDictionary with (field_name, field_type)
+* result will be an NSArray consists of NSDictionary
+
+
+find more detail in sample application in 'sample' dir.
+
+--
+mootoh
