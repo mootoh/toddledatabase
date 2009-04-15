@@ -303,59 +303,6 @@
 
 @implementation ToddleDatabase (Private)
 
-- (NSString *) databasePath
-{
-   NSFileManager *fm = [NSFileManager defaultManager];
-
-#ifdef UNIT_TEST
-
-   // db path
-   NSString *doc_dir = @"/tmp";
-   NSString *db_path = [doc_dir stringByAppendingPathComponent:@"test.sql"];
-
-   NSError *error;
-   if ([fm fileExistsAtPath:db_path] && ! [fm removeItemAtPath:db_path error:&error]) {
-      [[NSException
-         exceptionWithName:@"file exception"
-         reason:[NSString stringWithFormat:@"Failed to remove existing database file with message '%@' path=%@, LINE=%d", [error localizedDescription], db_path, __LINE__]
-         userInfo:nil] raise];
-   }
-
-   // from path
-   NSString *from_path = [[fm currentDirectoryPath] stringByAppendingPathComponent:@"/db/test.sql"];
-
-   if (! [fm copyItemAtPath:from_path toPath:db_path error:&error])
-      [[NSException
-         exceptionWithName:@"file exception"
-         reason:[NSString stringWithFormat:@"Failed to create writable database file with message '%@', from=%@, to=%@, LINE=%d", [error localizedDescription], from_path, db_path, __LINE__]
-         userInfo:nil] raise];
-
-   return db_path;
-
-#else // UNIT_TEST
-
-   // db path
-   NSString *doc_dir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-   NSString *db_path = [doc_dir stringByAppendingPathComponent:@"rtm.sql"];
-
-   NSError *error;
-   if ([fm fileExistsAtPath:db_path])
-      return db_path;
-
-   // The writable database does not exist, so copy the default to the appropriate location.
-   // from path
-   NSString *from_path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"rtm.sql"];
-
-   if (! [fm copyItemAtPath:from_path toPath:db_path error:&error])
-      [[NSException
-         exceptionWithName:@"file exception"
-         reason:[NSString stringWithFormat:@"Failed to create writable database file with message '%@', from=%@, to=%@.", [error localizedDescription], from_path, db_path]
-         userInfo:nil] raise];
-
-   return db_path;
-#endif // UNIT_TEST
-}
-
 - (void) migrate
 {
    for (NSString *mig_path in [self migrations]) {

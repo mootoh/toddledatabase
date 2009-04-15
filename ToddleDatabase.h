@@ -6,7 +6,7 @@
 //  Copyright 2008 deadbeaf.org. All rights reserved.
 //
 
-struct sqlite3;
+#import <sqlite3.h>
 
 @interface ToddleDatabase : NSObject
 {

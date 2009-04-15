@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B9473C3D0F956EA500F9A166 /* ToddleDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = B9473C3B0F956EA500F9A166 /* ToddleDatabase.h */; };
 		B9473C3E0F956EA500F9A166 /* ToddleDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B9473C3C0F956EA500F9A166 /* ToddleDatabase.m */; };
-		B9473C430F956EE200F9A166 /* logger.h in Headers */ = {isa = PBXBuildFile; fileRef = B9473C420F956EE200F9A166 /* logger.h */; };
 		B9473CB00F95D86900F9A166 /* ToddleDatabaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9473CAD0F95D86500F9A166 /* ToddleDatabaseAppDelegate.m */; };
 		B9473CBF0F95D8A100F9A166 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9473CBC0F95D88800F9A166 /* main.m */; };
 		B9473CC00F95D8A200F9A166 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9473CBD0F95D88800F9A166 /* MainWindow.xib */; };
@@ -18,6 +17,8 @@
 		B9473D050F95DB6C00F9A166 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9473D040F95DB6C00F9A166 /* CoreGraphics.framework */; };
 		B9473D0E0F95E64300F9A166 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		B9473D0F0F95E64400F9A166 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9473CCE0F95D93300F9A166 /* UIKit.framework */; };
+		B9ABBC4E0F95EECD00E0D41B /* ToddleDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B9473C3C0F956EA500F9A166 /* ToddleDatabase.m */; };
+		B9ABBC760F95EEF400E0D41B /* toddle.sql in Resources */ = {isa = PBXBuildFile; fileRef = B9ABBC750F95EEF100E0D41B /* toddle.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,6 @@
 		32DBCF5E0370ADEE00C91783 /* ToddleDatabase_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToddleDatabase_Prefix.pch; sourceTree = "<group>"; };
 		B9473C3B0F956EA500F9A166 /* ToddleDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToddleDatabase.h; sourceTree = "<group>"; };
 		B9473C3C0F956EA500F9A166 /* ToddleDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToddleDatabase.m; sourceTree = "<group>"; };
-		B9473C420F956EE200F9A166 /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
 		B9473C7D0F95D79100F9A166 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B9473CA20F95D7FA00F9A166 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9473CA40F95D7FA00F9A166 /* SampleApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleApp-Info.plist"; sourceTree = "<group>"; };
@@ -38,6 +38,7 @@
 		B9473CF10F95DA5800F9A166 /* SampleAppTavleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleAppTavleViewController.m; sourceTree = "<group>"; };
 		B9473D040F95DB6C00F9A166 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B9473D350F95E7DC00F9A166 /* SampleApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleApp_Prefix.pch; sourceTree = "<group>"; };
+		B9ABBC750F95EEF100E0D41B /* toddle.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = toddle.sql; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libToddleDatabase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libToddleDatabase.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,7 +124,6 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B9473C420F956EE200F9A166 /* logger.h */,
 				32DBCF5E0370ADEE00C91783 /* ToddleDatabase_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -140,6 +140,7 @@
 				B9473CBC0F95D88800F9A166 /* main.m */,
 				B9473CA40F95D7FA00F9A166 /* SampleApp-Info.plist */,
 				B9473D350F95E7DC00F9A166 /* SampleApp_Prefix.pch */,
+				B9ABBC750F95EEF100E0D41B /* toddle.sql */,
 			);
 			path = sample;
 			sourceTree = "<group>";
@@ -152,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9473C3D0F956EA500F9A166 /* ToddleDatabase.h in Headers */,
-				B9473C430F956EE200F9A166 /* logger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9473CC00F95D8A200F9A166 /* MainWindow.xib in Resources */,
+				B9ABBC760F95EEF400E0D41B /* toddle.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +232,7 @@
 				B9473CB00F95D86900F9A166 /* ToddleDatabaseAppDelegate.m in Sources */,
 				B9473CBF0F95D8A100F9A166 /* main.m in Sources */,
 				B9473CF20F95DA5800F9A166 /* SampleAppTavleViewController.m in Sources */,
+				B9ABBC4E0F95EECD00E0D41B /* ToddleDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

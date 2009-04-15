@@ -13,4 +13,7 @@
    ToddleDatabase *toddleDB;
 }
 
+- (NSArray *) lists;
++ (NSString *) databasePath;
+
 @end
